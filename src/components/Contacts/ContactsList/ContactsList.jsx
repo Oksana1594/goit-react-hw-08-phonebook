@@ -1,0 +1,35 @@
+import { useSelector } from 'react-redux';
+import { getContacts } from 'redux/contacts/contacts-selectors';
+import { getFilter } from 'redux/filter/filter-selectors';
+
+import styles from './contact-list.module.css';
+
+import ContactItem from '../ContactsItem/ContactsItem';
+
+const ContactList = () => {
+  const contacts = useSelector(getContacts);
+  const filteredContacts = useSelector(getFilter);
+
+  const getVisibleContacts = () => {
+    const normalizeFilter = filteredContacts.trim().toLowerCase();
+
+    const result = contacts.filter(contact =>
+      contact.name.trim().toLowerCase().includes(normalizeFilter)
+    );
+    return result;
+  };
+
+  const visibleContacts = getVisibleContacts();
+
+  return (
+    <>
+      {visibleContacts.length === 0 && <p>There is no such contact</p>}
+      <ul className={styles.list}>
+        {visibleContacts.map(({ id, name, phone }) => {
+          return <ContactItem key={id} id={id} name={name} phone={phone} />;
+        })}
+      </ul>
+    </>
+  );
+};
+export default ContactList;
