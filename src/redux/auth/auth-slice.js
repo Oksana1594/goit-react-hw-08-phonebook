@@ -20,9 +20,10 @@ const authSlice = createSlice({
         store.error = null;
       })
       .addCase(signup.fulfilled, (store, { payload }) => {
+        const { user, token } = payload;
         store.loading = false;
-        store.user = payload.user;
-        store.token = payload.token;
+        store.user = user;
+        store.token = token;
         store.isLogin = true;
       })
       .addCase(signup.rejected, (store, { payload }) => {
