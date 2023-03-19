@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import initialState from './initialState';
-import css from './login-form.module.css'
+import css from './login-form.module.css';
 
 import {
   Button,
@@ -44,7 +44,6 @@ const LoginForm = ({ onSubmit }) => {
         flexDirection="column"
         isRequired
       >
-   
         <FormLabel mt="15" htmlFor="email">
           Email
         </FormLabel>
@@ -66,7 +65,7 @@ const LoginForm = ({ onSubmit }) => {
         </FormLabel>
         <InputGroup size="md">
           <Input
-               className={css.input}
+            className={css.input}
             focusBorderColor="green.300"
             size="md"
             id="password"
@@ -86,7 +85,14 @@ const LoginForm = ({ onSubmit }) => {
           </InputRightElement>
         </InputGroup>
 
-        <Button    className={css.btn} type="submit" mr="auto" ml="auto" mt="20" colorScheme="green">
+        <Button
+          className={css.btn}
+          type="submit"
+          mr="auto"
+          ml="auto"
+          mt="20"
+          colorScheme="green"
+        >
           Login
         </Button>
       </FormControl>

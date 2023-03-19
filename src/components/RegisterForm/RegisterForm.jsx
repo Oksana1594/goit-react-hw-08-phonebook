@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import initialState from './initialState';
 
-import css from './register-form.module.css'
+import css from './register-form.module.css';
 import {
   Button,
   Input,
@@ -45,7 +45,8 @@ const RegisterForm = ({ onSubmit }) => {
         isRequired
       >
         <FormLabel htmlFor="name">Name</FormLabel>
-        <Input className={css.input}
+        <Input
+          className={css.input}
           focusBorderColor="green.300"
           size="md"
           id="name"
@@ -60,7 +61,8 @@ const RegisterForm = ({ onSubmit }) => {
         <FormLabel mt="4" htmlFor="email">
           Email
         </FormLabel>
-        <Input className={css.input}
+        <Input
+          className={css.input}
           focusBorderColor="green.300"
           size="md"
           id="email"
@@ -76,7 +78,8 @@ const RegisterForm = ({ onSubmit }) => {
           Password
         </FormLabel>
         <InputGroup size="md">
-          <Input className={css.input}
+          <Input
+            className={css.input}
             focusBorderColor="green.300"
             size="md"
             id="password"
@@ -96,7 +99,14 @@ const RegisterForm = ({ onSubmit }) => {
           </InputRightElement>
         </InputGroup>
 
-        <Button className={css.btn} type="submit" mr="auto" ml="auto" mt="20" colorScheme="green">
+        <Button
+          className={css.btn}
+          type="submit"
+          mr="auto"
+          ml="auto"
+          mt="20"
+          colorScheme="green"
+        >
           Register
         </Button>
       </FormControl>

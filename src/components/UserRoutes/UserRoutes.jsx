@@ -8,9 +8,9 @@ import { Layout } from 'components/Layout/Layout';
 
 const HomePage = lazy(() => import('components/Page/HomePage/HomePage'));
 
-const NotFoundPage = lazy(() =>
-  import('components/Page/NotFoundPage/NotFoundPage')
-);
+// const NotFoundPage = lazy(() =>
+//   import('components/Page/NotFoundPage/NotFoundPage')
+// );
 const RegisterPage = lazy(() =>
   import('components/Page/RegisterPage/RegisterPage')
 );
@@ -38,7 +38,6 @@ const UserRoutes = () => {
       }
     >
       <Routes>
-        {/* <Route path="/" element={<HomePage />} /> */}
         <Route path="/" element={<Layout />} />
         <Route index element={<HomePage />} />
         <Route element={<PublicRoute />}>
@@ -50,7 +49,7 @@ const UserRoutes = () => {
           <Route path="/contacts" element={<ContactsPage />} />
         </Route>
 
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path="*" element={<HomePage />} />
       </Routes>
     </Suspense>
   );

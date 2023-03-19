@@ -1,25 +1,19 @@
+import { useSelector } from 'react-redux';
 
-import { useSelector} from "react-redux";
-// import { Link } from "react-router-dom";
-import NavbarAuth from "./NavbarAuth/NavbarAuth";
-import NavbarUser from "./NavbarUser/NavbarUser";
+import NavbarAuth from './NavbarAuth/NavbarAuth';
+import NavbarUser from './NavbarUser/NavbarUser';
 
-
-import { isUserLogin } from "redux/auth/auth-selector";
+import { isUserLogin } from 'redux/auth/auth-selector';
 
 const Navbar = () => {
+  const isLogin = useSelector(isUserLogin);
 
-    const isLogin = useSelector(isUserLogin)
-
-
-    return (
-        <div>
-            {/* <Link to="/">Phonebook</Link> */}
-             {!isLogin && <NavbarAuth/>}
-            {isLogin && <NavbarUser/> }
-          
+  return (
+    <div>
+      {!isLogin && <NavbarAuth />}
+      {isLogin && <NavbarUser />}
     </div>
-)
-}
+  );
+};
 
 export default Navbar;
