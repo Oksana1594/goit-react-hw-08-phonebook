@@ -5,12 +5,12 @@ import { fetchDeleteContact } from 'redux/contacts/contacts-operations';
 
 import styles from './contacts-item.module.css';
 
-const ContactItem = ({ id, name, phone }) => {
+const ContactItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
   return (
     <li className={styles.item} key={id}>
       <p className={styles.text}>
-        {name}: {phone}
+        {name}: {number}
       </p>
       <button
         className={styles.btn}
@@ -28,5 +28,5 @@ export default ContactItem;
 ContactItem.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string.isRequired,
-  phone: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
 };

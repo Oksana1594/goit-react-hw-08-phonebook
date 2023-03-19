@@ -1,0 +1,21 @@
+.link {
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  padding: 20px;
+}
+
+.link:hover {
+  color: green;
+}
+
+.link:global(.active) {
+  font-weight: 900;
+}
+
+.navbar {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  background-color: rgb(74, 193, 62);
+}

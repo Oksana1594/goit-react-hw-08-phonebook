@@ -25,8 +25,8 @@ const ContactList = () => {
     <>
       {visibleContacts.length === 0 && <p>There is no such contact</p>}
       <ul className={styles.list}>
-        {visibleContacts.map(({ id, name, phone }) => {
-          return <ContactItem key={id} id={id} name={name} phone={phone} />;
+        {visibleContacts.map(({ id, name, number }) => {
+          return <ContactItem key={id} id={id} name={name} number={number} />;
         })}
       </ul>
     </>

@@ -1,0 +1,15 @@
+.text {
+  color: white;
+  font-size: 15px;
+}
+.btn {
+  background-color: green;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.position {
+  width: 150px;
+  margin-left: auto;
+}

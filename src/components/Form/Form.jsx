@@ -10,7 +10,7 @@ import {
 
 const Form = () => {
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [number, setPhone] = useState('');
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const Form = () => {
         setName(value);
         break;
 
-      case 'phone':
+      case 'number':
         setPhone(value);
         break;
 
@@ -36,7 +36,7 @@ const Form = () => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    dispatch(fetchAddContact({ name, phone }));
+    dispatch(fetchAddContact({ name, number }));
     setName('');
     setPhone('');
   };
@@ -61,8 +61,8 @@ const Form = () => {
         <input
           className={styles.input}
           type="tel"
-          name="phone"
-          value={phone}
+          name="number"
+          value={number}
           placeholder="099-777-77-77"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           onChange={handleChange}

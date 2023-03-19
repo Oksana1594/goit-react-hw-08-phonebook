@@ -1,0 +1,19 @@
+.form {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.input {
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+.btn {
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-family: inherit;
+  background-color: rgb(74, 193, 62);
+  font-size: 15px;
+  border: none;
+}

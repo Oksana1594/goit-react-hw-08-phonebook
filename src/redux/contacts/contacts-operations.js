@@ -27,19 +27,19 @@ export const fetchAddContact = createAsyncThunk(
     }
   },
   {
-    condition: ({ name, phone }, { getState }) => {
+    condition: ({ name, number }, { getState }) => {
       const { contacts } = getState();
       const isNameAdded = contacts.items.some(
         contact => contact.name.toLowerCase() === name.toLowerCase()
       );
       const isNumberAdded = contacts.items.some(
-        contact => contact.phone === phone
+        contact => contact.number === number
       );
       if (isNameAdded) {
         Notify.failure(`${name} is already in contacts`);
         return false;
       } else if (isNumberAdded) {
-        Notify.failure(`${phone} is already in contacts`);
+        Notify.failure(`${number} is already in contacts`);
         return false;
       }
     },
