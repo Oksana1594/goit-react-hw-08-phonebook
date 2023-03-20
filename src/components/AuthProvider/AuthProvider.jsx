@@ -6,7 +6,7 @@ import { getCurrent } from 'redux/auth/auth-operation';
 const AuthProvider = ({ children }) => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getCurrent);
+    dispatch(getCurrent());
   }, [dispatch]);
   return <>{children}</>;
 };

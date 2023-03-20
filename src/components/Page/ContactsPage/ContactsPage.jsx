@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import { getContacts } from 'redux/contacts/contacts-selectors';
 
+
 import Form from 'components/Form/Form';
 import ContactList from 'components/Contacts/ContactsList/ContactsList';
 import FieldToFilter from 'components/FieldToFilter/FieldToFilter';
@@ -11,6 +12,8 @@ const ContactsPage = () => {
   const contacts = useSelector(getContacts);
 
   const isItems = Boolean(contacts.length);
+
+
   return (
     <>
       <MainTitle mainTitle="Phonebook " />
